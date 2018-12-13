@@ -1,0 +1,45 @@
+# servic 配置 修改了配置不要忘记修改struct
+[app.api]
+apiName        = "backend api"
+apiVersion     = "1.0"
+
+# http
+apiAddr        = "0.0.0.0:8080"
+
+# https
+apiTls         = false
+apiTlsAddr     = "127.0.0.1:8081"
+
+# jwt auth
+apiSecretKey   = "12345!@#$%"
+apiUsername    = "admin"
+apiPassword    = "pwd"
+
+# log
+apiLogFile     = ""
+
+# image
+imageAllowExts = ["gif", "jpeg", "png"]
+imageMaxSize = 51200
+ImageSavePath = "static/images/"
+
+[app.rpc]
+rpcName        = "backendservice"
+rpcVersion     = "1.0"
+
+rpcAddr        = "localhost:50051"
+rpcTraceAddr   = "localhost:50052"
+
+rpcLogFile     = ""
+
+[redis]
+server = "172.18.0.23:6379"
+pwd = ""
+
+
+# 数据库配置
+[database.backend]
+#master = "root:123456@tcp(127.0.0.1:3306)/backend?charset=utf8&timeout=5s"
+master = "root:passw0rd@tcp(172.18.0.22:3306)/backend?charset=utf8&timeout=5s"
+#slave = "root:123456@tcp(127.0.0.1:3306)/backend?charset=utf8&timeout=5s"
+slave = "root:passw0rd@tcp(172.18.0.22.1:3306)/backend?charset=utf8&timeout=5s"

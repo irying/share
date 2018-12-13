@@ -1,0 +1,26 @@
+package: .
+ignore:
+- backend/utils
+- backend/conf
+- backend/api
+import:
+- package: github.com/gin-gonic/gin
+- package: google.golang.org/grpc
+- package: github.com/golang/protobuf/protoc-gen-go
+- package: golang.org/x/net/context
+- package: golang.org/x/net/trace
+- package: golang.org/x/net/http2
+- package: golang.org/x/net/http2/hpack
+- package: golang.org/x/text/secure/bidirule
+- package: golang.org/x/text/unicode/bidi
+- package: golang.org/x/text/unicode/norm
+- package: google.golang.org/genproto/googleapis/rpc/status
+- package: github.com/go-sql-driver/mysql
+- package: github.com/gin-gonic/gin
+- package: github.com/BurntSushi/toml
+- package: github.com/ekyoung/gin-nice-recovery
+- package: github.com/gin-gonic/contrib
+- package: github.com/dgrijalva/jwt-go
+- package: github.com/DeanThompson/ginpprof
+- package: github.com/smartystreets/goconvey
+- package: github.com/go-redis/redis

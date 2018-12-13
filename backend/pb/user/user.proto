@@ -1,0 +1,45 @@
+//protoc -I ./  pb/user/user.proto --go_out=plugins=grpc:./
+
+syntax = "proto3";
+package pb;
+
+service UserService {
+  rpc FindUserByUID (ByUidRequest) returns (UserResponse) {};
+  rpc FindUserByUsernameAndPassword (ByUserInfoRequest) returns (UserResponse) {};
+  rpc SaveProfile(ProfileUpdateRequest) returns (SaveResponse) {};
+  rpc IsExpiredToken(TokenRequest) returns (TokenResponse) {};
+  rpc SaveToken(TokenRequest) returns (SaveResponse) {};
+}
+
+message ByUidRequest {
+    int64    uid = 1;
+}
+
+message TokenRequest {
+    string   username = 1;
+    string   token = 2;
+}
+
+message TokenResponse{
+    bool  isExpired = 1;
+}
+message ProfileUpdateRequest {
+    int64    uid = 1;
+    string   nickname = 2;
+    string   picture_url = 3;
+}
+
+message ByUserInfoRequest {
+    string    username = 1;
+    string    password = 2;
+}
+
+message UserResponse{
+    int64    uid = 1;
+    string   username = 2;
+    string   nickname = 3;
+    string   profile_picture_url = 4;
+}
+message SaveResponse{
+    bool   success = 1;
+}

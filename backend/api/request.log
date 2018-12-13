@@ -1,0 +1,2 @@
+[GIN] 2018/10/09 - 06:56:27 | 200 |    4.271921ms |        10.0.2.2 | GET      /api/users/profiles?uid=10000002&token=test
+[GIN] 2018/10/09 - 06:56:49 | 200 |   11.200076ms |        10.0.2.2 | GET      /backend/index?uid=1&token=test
